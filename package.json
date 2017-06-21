@@ -1,0 +1,14 @@
+{
+    "name": "thai-word-segmentation",
+    "description": "Thai word segmentation API",
+    "version": "0.0.1",
+    "private": true,
+    "license": "Apache",
+    "author": "Str1k",
+    "engines": {
+        "node": ">=6.9.1"
+    },
+    "scripts": {
+	    "start": "node index.js"
+    }
+}
