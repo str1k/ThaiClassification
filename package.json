@@ -7,7 +7,6 @@
     "author": "Str1k",
     "engines": {
         "node": ">=6.9.1"
-		"express": ">=4.15.3"
     },
     "scripts": {
 	    "start": "node index.js"
