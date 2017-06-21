@@ -1,13 +1,19 @@
-var http = require('http');
+var express = require('express');
+var app = express();
+var fs = require("fs");
 
-var server = http.createServer(function(request, response) {
+app.get('/listUsers', function (req, res) {
+   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+       console.log( data );
+       res.end( data );
+   });
+})
 
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello World!");
+var server = app.listen(8081, function () {
 
-});
+  var host = server.address().address
+  var port = server.address().port
 
-var port = process.env.PORT || 1337;
-server.listen(port);
+  console.log("Example app listening at http://%s:%s", host, port)
 
-console.log("Server running at http://localhost:%d", port);
+})
