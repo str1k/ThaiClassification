@@ -8,7 +8,12 @@ app.get('/listUsers', function (req, res) {
        res.end( data );
    });
 })
-var port = process.env.PORT || 1337;
-server.listen(port);
 
-console.log("Server running at http://localhost:%d", port);
+var server = app.listen(process.env.PORT || 1337, function () {
+
+  var host = server.address().address
+  var port = server.address().port
+
+  console.log("Example app listening at http://%s:%s", host, port)
+
+})
